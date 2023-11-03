@@ -12,7 +12,7 @@ end
 BoxSolitaireGame(deck, hand, discard; n_cycles=1, shuffle_deck_on_cycle=false) = BoxSolitaireGame(deck, hand, discard, Int32[1], n_cycles, Set{UInt64}(), shuffle_deck_on_cycle)
 
 "Get a copy of the game with no state history and a reset cycle counter."
-copy_card_state(game::BoxSolitaireGame) = BoxSolitaireGame(game.deck, game.hand, game.discard, n_cycles=game.n_cycles, shuffle_deck_on_cycle = game.shuffle_deck_on_cycle)
+copy_card_state(game::BoxSolitaireGame) = BoxSolitaireGame(copy(game.deck), copy(game.hand), copy(game.discard), n_cycles=game.n_cycles, shuffle_deck_on_cycle = game.shuffle_deck_on_cycle)
 
 function BoxSolitaireGame(; kwargs...)
     deck = shuffleddeck()

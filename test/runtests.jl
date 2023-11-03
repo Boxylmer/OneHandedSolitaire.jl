@@ -35,6 +35,10 @@ using Test
 
     @testset "BoxSolitaireGame.jl" begin
         game = BoxSolitaireGame()
+        another_game = OneHandedSolitaire.copy_card_state(game)
+        @test !(game.hand === another_game.hand)
+
+
         
     end
 
