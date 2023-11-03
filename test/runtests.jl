@@ -29,6 +29,6 @@ using Test
     end
 
     @testset "BoxSolitaireActions.jl" begin
-    
+        
     end
 end
