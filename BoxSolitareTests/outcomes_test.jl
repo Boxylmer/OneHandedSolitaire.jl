@@ -1,4 +1,4 @@
-include("../BoxSolitare.jl")
+include("../BoxSolitaire.jl")
 using Plots
 
 
@@ -44,7 +44,7 @@ function generate_hand_state_tracking_figure(maxcycles=100; cyclestep=1, ngames=
     resplot = plot(xlabel="Cycle", ylabel="Hand size", legend=nothing)
     cycles = collect(1:cyclestep:maxcycles)
     hand_sizes = zeros(Int32, length(cycles))
-    games = [BoxSolitareGame(; shuffle_deck_on_cycle=shuffle, n_cycles=maxcycles) for _ in 1:ngames]
+    games = [BoxSolitaireGame(; shuffle_deck_on_cycle=shuffle, n_cycles=maxcycles) for _ in 1:ngames]
 
     for gameidx in eachindex(games)
         for cycle_i in eachindex(cycles)
@@ -78,7 +78,7 @@ plt
 function games_won_by_cycle(samplesize=300000, maxcycles=25)
     wincyclecounter = Vector{Union{Int64, Missing}}(undef, samplesize)
     @Threads.threads for i in eachindex(wincyclecounter)
-        game = BoxSolitareGame(; n_cycles=maxcycles)
+        game = BoxSolitaireGame(; n_cycles=maxcycles)
         ncycles = 0
         while !isgamewon(game) && !isgamelost(game)
             onecycle!(game)

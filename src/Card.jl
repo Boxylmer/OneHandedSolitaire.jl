@@ -60,7 +60,7 @@ function Base.show(io::IO, c::Card)
 end
 
 function isblack(card::Card)
-    if card.suit == Hearts || card.suit == Diamonds 
+    if card.suit == Clubs || card.suit == Spades 
         return true 
     else 
         return false

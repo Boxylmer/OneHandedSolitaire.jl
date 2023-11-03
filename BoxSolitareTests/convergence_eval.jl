@@ -1,4 +1,4 @@
-include("BoxSolitare.jl")
+include("BoxSolitaire.jl")
 using Plots
 
 function n_more_games!(total_games::AbstractVector, total_winrates::AbstractVector, n=1; kwargs...)

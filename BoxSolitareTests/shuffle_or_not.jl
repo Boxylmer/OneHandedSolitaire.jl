@@ -1,4 +1,4 @@
-include("../BoxSolitare.jl")
+include("../BoxSolitaire.jl")
 using Plots
 
 cycles = collect(1:1:20)

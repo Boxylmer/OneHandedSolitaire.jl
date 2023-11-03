@@ -1,3 +1,17 @@
+name = "OneHandedSolitaire"
+uuid = "d350b9a3-c9fa-4a4c-8383-b4d24c2bc09a"
+authors = ["Will <william.joseph.box@gmail.com> and contributors"]
+version = "1.0.0"
+
 [deps]
-EAGO = "bb8be931-2a91-5aca-9f87-79e1cb69959a"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
