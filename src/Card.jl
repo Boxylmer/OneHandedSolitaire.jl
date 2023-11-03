@@ -54,9 +54,13 @@ function Base.show(io::IO, c::Card)
         valstr = "King"
     else 
         valstr = "Joker"
+        if suitstr == ""
+            print(io, valstr)
+            return Nothing
+        end
     end
     print(io, valstr * " " * suitstr)
-
+    return Nothing
 end
 
 function isblack(card::Card)
