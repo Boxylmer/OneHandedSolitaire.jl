@@ -1,10 +1,10 @@
 "Returns true if the game won, false if it lost."
-playonegame(; kwargs...) = gameresult(BoxSolitaireGame(; kwargs...))
+playonegame(; kwargs...) = gameresult!(BoxSolitaireGame(; kwargs...))
 
 "Returns a completed game."
 function completedgame(; kwargs...)
     game = BoxSolitaireGame(; kwargs...)
-    gameresult(game)
+    gameresult!(game)
     return game
 end
 

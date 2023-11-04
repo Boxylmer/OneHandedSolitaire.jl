@@ -10,7 +10,7 @@ export BoxSolitaireGame
 
 export cyclicstate, determine_cycle_period!
 export isgamewon, isgamelost, ismaxcycleshit, isgameexhausted, isgamecycling
-export handsize, gameresult
+export handsize, gameresult!
 export draw!, checkhand!, oneturn!, onecycle!
 
 include("BoxSolitaireActions.jl")

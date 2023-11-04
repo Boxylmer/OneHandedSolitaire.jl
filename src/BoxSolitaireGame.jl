@@ -43,7 +43,7 @@ function determine_cycle_period!(game::BoxSolitaireGame; maxcheck=100)
     end
 
     cycle_period = 0
-    gameresult(game) # force a resolution to the game
+    gameresult!(game) # force a resolution to the game
     if cyclicstate(game)
         game_copy = BoxSolitaireGame(game.deck, game.hand, game.discard, n_cycles=maxcheck + 1, shuffle_deck_on_cycle = game.shuffle_deck_on_cycle)
         onecycle!(game_copy) # make sure at least one state is loaded
@@ -97,7 +97,7 @@ end
 
 
 "Progresses the game to completion. Returns false if the game was lost, returns true if the game was won."
-function gameresult(game::BoxSolitaireGame)
+function gameresult!(game::BoxSolitaireGame)
     while !(isgamewon(game) || isgamelost(game))
         onecycle!(game)
     end
